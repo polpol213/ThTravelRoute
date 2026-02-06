@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thailand Route Recommender</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="background-blobs">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+    </div>
+
+    <div class="app-container">
+      <header>
+        <h1>
+          <i class="fa-solid fa-map-location-dot"></i> แนะนำเส้นทางเดินทางในประเทศไทย
+        </h1>
+        <p>วันนี้อยากไปไหนกันดี?</p>
+      </header>
+
+      <main>
+        <div class="glass-card search-card">
+          <div class="input-group">
+            <label for="origin"
+              ><i class="fa-solid fa-location-dot"></i> จังหวัดเริ่มต้น</label
+            >
+            <div class="select-wrapper">
+              <select id="origin">
+                <option value="" disabled selected>
+                   เลือกจังหวัดเริ่มต้น 
+                </option>
+                <!-- Options populated by JS -->
+              </select>
+            </div>
+          </div>
+
+          <div class="exchange-icon" id="swap-btn">
+            <i class="fa-solid fa-right-left"></i>
+          </div>
+
+          <div class="input-group">
+            <label for="destination"
+              ><i class="fa-solid fa-flag-checkered"></i> จังหวัดปลายทาง</label
+            >
+            <div class="select-wrapper">
+              <select id="destination">
+                <option value="" disabled selected>
+                   เลือกจังหวัดปลายทาง 
+                </option>
+                <!-- Options populated by JS -->
+              </select>
+            </div>
+          </div>
+
+          <button id="search-btn" class="search-btn">
+            ค้นหาเส้นทาง <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+
+        <div id="map"></div>
+
+        <div id="results-area" class="results-container">
+          <!-- Results will appear here -->
+          <div class="placeholder-text">
+            กรุณาเลือกจังหวัดเริ่มต้นและปลายทางเพื่อค้นหาเส้นทาง
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <p>Chonlapol Srichayech 2026 All right reserved.</p>
+        <p>อัพเดทข้อมูลล่าสุด: 2026-02-06 | Thailand Major Road Networks</p>
+        <p>เว็บไซต์นี้อยู่ระหว่างการพัฒนา โปรดศึกษาข้อมูลอย่างละเอียดก่อนนำไปใช้</p>
+        <p>ข้อมูลเส้นทางในเว็บนี้อาจมีเส้นทางที่ยังไม่เปิดใช้หรือมีการปิดจราจร โปรดดูเพื่อประกอบการตัดสินใจเท่านั้น</p>
+      </footer>
+    </div>
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
